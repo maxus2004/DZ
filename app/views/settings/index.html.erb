@@ -1,2 +1,48 @@
-<h1>Settings#index</h1>
-<p>Find me in app/views/settings/index.html.erb</p>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>WiFiVorota - Settings</title>
+    <link rel="stylesheet" href="<%= asset_path('settings.css') %>">
+    <script src="<%= asset_path('camera_api.js') %>"></script>
+    <script src="<%= asset_path('settings.js') %>"></script>
+</head>
+
+<body>
+    <button id="back_btn" onclick="window.location='/'">назад</button>
+    <br>
+    <form id="form">
+        <label class="setting_label">
+            логин:
+            <input type="text" class="setting_input" id="user_login"> </label><br>
+        <label class="setting_label">
+            пароль:
+            <input type="text" class="setting_input" id="user_password"> </label><br>
+        <label class="setting_label">
+            название WiFi:
+            <input type="text" class="setting_input" id="wifi_ssid"> </label><br>
+        <label class="setting_label">
+            пароль WiFi:
+            <input type="text" class="setting_input" id="wifi_password"> </label><br>
+        <label class="setting_label">
+            Кнопка 1:
+            <input type="text" class="setting_input" id="btn0_name"> </label><br>
+        <label class="setting_label">
+            Кнопка 2:
+            <input type="text" class="setting_input" id="btn1_name"> </label><br>
+        <label class="setting_label">
+            Кнопка 3:
+            <input type="text" class="setting_input" id="btn2_name"> </label><br>
+        <label class="setting_label">
+            Кнопка 4:
+            <input type="text" class="setting_input" id="btn3_name"> </label><br>
+        <input type="submit" value="Сохранить" id="submit">
+    </form>
+    <button class="setting_input" id="reboot_btn" onclick="api('reboot')">Перезагрузить</button>
+    <button class="setting_input" id="update_btn" onclick="firmware_update()">
+        Обновить прошивку
+    </button>
+    <button class="setting_input" id="logout_btn" onclick="logout()">Выйти из аккаунта</button>
+</body>
+
+</html>

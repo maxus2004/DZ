@@ -2,14 +2,19 @@
 <html>
   <head>
     <title>Dz</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+<!--    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %> -->
     <%= javascript_importmap_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" sizes="192x192" href="<%= asset_path('favicon.png') %>">
+    <link rel="manifest" href="<%= asset_path('manifest.json') %>">
+    <script>
+        navigator.serviceWorker.register("<%= asset_path('service_worker.js') %>");
+    </script>
   </head>
-
   <body>
     <%= yield %>
   </body>

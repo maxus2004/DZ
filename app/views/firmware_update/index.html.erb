@@ -1,2 +1,30 @@
-<h1>FirmwareUpdate#index</h1>
-<p>Find me in app/views/firmware_update/index.html.erb</p>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>WiFiVorota - Update</title>
+    <link rel="stylesheet" href="<%= asset_path('firmware_update.css') %>">
+    <script src="<%= asset_path('camera_api.js') %>"></script>
+    <script src="<%= asset_path('firmware_update.js') %>"></script>
+</head>
+
+<body>
+    <button id="back_btn" onclick="window.location='/settings/'">назад</button>
+    <br>
+    <label class="setting_label">
+        установленная версия:
+        <input type="text" class="setting_input" id="current_version" disabled> </label><br>
+    <label class="setting_label">
+        последняя версия:
+        <input type="text" class="setting_input" id="latest_version" disabled> </label><br>
+    <label class="setting_label">
+        URL прошивки:
+        <input type="text" class="setting_input" id="firmware_url" value="https://vorota.servermaksa.tk/firmware.bin">
+    </label><br>
+    <button class="setting_input" id="update_btn">
+        Обновить прошивку
+    </button>
+    <pre id="update_log"></pre>
+</body>
+
+</html>
